@@ -1,5 +1,5 @@
 
-import { Todo } from "../types/todo"; // Importing the Todo type from a types file
+import { Todo } from "@/app/types/todo"; // Importing the Todo type from a types file
 
 // Defining the interface for the props that the TodoItem component will receive
 interface TodoItemProps {
