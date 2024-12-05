@@ -3,7 +3,7 @@
 import { TodoItem } from "./TodoItem"; // Importing the TodoItem component
 import { nanoid } from "nanoid"; // Importing the nanoid library for generating unique IDs
 import { useState } from "react"; // Importing the useState hook from React
-import { Todo } from "../types/todo"; // Importing the Todo type
+import { Todo } from "../app/types/todo"; // Importing the Todo type
 
 // Defining the TodoList component as a functional component
 export const TodoList: React.FC = () => {
