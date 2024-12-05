@@ -8,17 +8,29 @@ import { CopilotRuntime, OpenAIAdapter } from "@copilotkit/backend";
 
 export async function POST(req: Request): Promise<Response> {
 
-  // Create a new instance of CopilotRuntime
+  if (!req) {
+    return new Response("No request provided", { status: 400 });
+  }
 
-  const copilotKit = new CopilotRuntime({});
+  try {
+
+    // Create a new instance of CopilotRuntime
+
+    const copilotKit = new CopilotRuntime({});
 
 
 
-// Use the copilotKit to generate a response using the OpenAIAdapter
+    // Use the copilotKit to generate a response using the OpenAIAdapter
 
-  // Pass the incoming request (req) and a new instance of OpenAIAdapter to the response method
+    // Pass the incoming request (req) and a new instance of OpenAIAdapter to the response method
 
-  return copilotKit.response(req, new OpenAIAdapter());
+    return copilotKit.response(req, new OpenAIAdapter());
+  } catch (error) {
+
+    console.error(error);
+
+    return new Response("An error occurred", { status: 500 });
+  }
 
 }
 
